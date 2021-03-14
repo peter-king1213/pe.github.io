@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo3</title>
+    <style type="text/css">
+        .box {
+            transform-style: preserve-3d;
+            perspective: 140cm;
+            height: 100px;
+            width: 100px;
+            -webkit-transform-style: preserve-3d;
+            position: absolute;
+            /* perspective: 500px; */
+            animation: turn 4s linear infinite;
+            top: calc(50% - 50px);
+            left: calc(50% - 50px);
+        }
+        
+        .front {
+            background-image: url(https://i0.hdslb.com/bfs/game/e5579b44592cd327f57e1ba25ad17668e38b1b50.png);
+            background-size: 100px 100px;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            z-index: 1;
+            transform: translateZ(50px);
+        }
+        
+        .bottom {
+            background-image: url(https://i0.hdslb.com/bfs/game/50deeac099a41d169a9bf0397c4566bf31905e60.png);
+            background-size: 100px 100px;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform: translatey(50px) rotateX(-90deg);
+            z-index: 0;
+        }
+        
+        li {
+            list-style: none;
+            float: left;
+        }
+        
+        ul {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 100px;
+            transition: all 2s ease;
+        }
+        
+        .back {
+            background-image: url(https://i0.hdslb.com/bfs/game/7f8bdf96b4323ba9e7309a30e6cadf9f41903d9e.png);
+            background-size: 100px 100px;
+            position: absolute;
+            transform: translateZ(-50px) rotate(180deg);
+            width: 100px;
+            height: 100px;
+        }
+        
+        .top {
+            background-image: url(https://i0.hdslb.com/bfs/game/5361101b2852dc8db0c5359e70ee1551a13a13cb.png);
+            position: absolute;
+            background-size: 100px 100px;
+            width: 100px;
+            height: 100px;
+            transform: translatey(-50px) rotatex(-90deg) rotate(180deg);
+        }
+        
+        @keyframes turn {
+            100% {
+                transform: rotate3d(1, 1, 0, 360deg);
+            }
+        }
+        
+        @ #box-2 {
+            animation-delay: 1s;
+        }
+        
+        #box-3 {
+            animation-delay: 2s;
+        }
+        
+        #box-4 {
+            animation-delay: 3s;
+        }
+        
+        #box-5 {
+            animation-delay: 4s;
+        }
+        
+        .left {
+            background-image: url(https://i0.hdslb.com/bfs/game/95e83b979668825746152ffe3c349e3ae29498f5.png);
+            width: 100px;
+            height: 100px;
+            background-size: 100px 100px;
+            transform: translateX(-50px) rotateY(90deg);
+            position: absolute;
+        }
+        
+        .right {
+            background-image: url(https://i0.hdslb.com/bfs/game/471d4e44cf43f406156c65ade77e0f056166974d.png);
+            width: 100px;
+            height: 100px;
+            background-size: 100px 100px;
+            transform: translateX(50px) rotateY(90deg);
+        }
+        
+        .box:hover {
+            animation-play-state: paused;
+        }
+        
+        body {
+            background-color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box" id="box-1">
+        <div class="left"></div>
+        <div class="front"></div>
+        <div class="bottom"></div>
+        <div class="back"></div>
+        <div class="top"></div>
+        <div class="right"></div>
+    </div>
+
+</body>
+
+</html>
